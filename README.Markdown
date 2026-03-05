@@ -47,16 +47,14 @@ A ideia aqui é: **catálogo + atalhos** pra você encontrar **onde assistir** (
 No `config.js`, cole sua chave aqui:
 ```js
 TMDB_API_KEY: "SUA_CHAVE_AQUI"
+```
 
-3) Configure o botão “Assistir” (WATCH_OPTIONS)
-
+### 3) Configure o botão “Assistir” (WATCH_OPTIONS)
 Você define as opções por tipo:
 
-movie → filmes
-
-tv → séries
-
-anime → animes
+- `movie` → filmes  
+- `tv` → séries  
+- `anime` → animes  
 
 Exemplo:
 ```js
@@ -73,3 +71,68 @@ WATCH_OPTIONS = {
   ]
 }
 ```
+
+> `{query}` é substituído pelo nome do título automaticamente (se o seu script estiver usando isso).
+
+### 4) Domínios permitidos (WATCH_ALLOWED_DOMAINS)
+Se o domínio não estiver na lista, a opção **não aparece** no botão “Assistir”.
+
+Exemplo:
+```js
+WATCH_ALLOWED_DOMAINS = [
+  "netflix.com",
+  "primevideo.com",
+  "disneyplus.com",
+  "play.max.com",
+  "crunchyroll.com",
+  "youtube.com",
+  "youtu.be",
+  "vimeo.com"
+]
+```
+
+---
+
+## ▶️ Como rodar (Windows)
+
+### Opção 1: VS Code + Live Server
+1. Abra a pasta do projeto no VS Code
+2. Clique em **Go Live**
+3. Abra o link que aparecer
+
+### Opção 2: Python (servidor simples)
+Abra o terminal na pasta do projeto e rode:
+```bash
+python -m http.server 5500
+```
+
+Depois abra no navegador:
+- `http://localhost:5500`
+
+---
+
+## 🌐 GitHub Pages
+
+Se você ativar o GitHub Pages, o site fica assim:
+- `https://SEUUSUARIO.github.io/NOME-DO-REPO/`
+
+Exemplo:
+- `https://srigamertv.github.io/movies/`
+
+---
+
+## 🧠 Observações
+
+- A **Minha Biblioteca** usa `localStorage`, então os links ficam salvos **no seu navegador**.
+- Se você limpar dados do navegador, a biblioteca pode ser apagada.
+
+---
+
+## 📄 Licença
+
+Escolha uma licença (ex.: MIT).  
+Se quiser, eu já deixo um `LICENSE` pronto também.
+
+---
+
+Feito por **SR.IGAMER TV**
