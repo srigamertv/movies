@@ -1,28 +1,55 @@
-SRIGAMER MOVIES — HTML puro (Catálogo + botão "Assistir" com opções)
-===================================================================
+# MOVIES — Catálogo + botão “Assistir” com opções
 
-✅ O que tem:
-- Filmes / Séries / Animes (TMDb + AniList)
-- Busca
-- Detalhes com trailer e relacionados
-- Onde assistir (link oficial TMDb quando existir)
-- ✅ Botão "Assistir" que abre opções configuráveis por tipo (movie/tv/anime) no config.js
-- ✅ Minha Biblioteca (player interno):
-  - você cola link MP4 / HLS (.m3u8) / Embed oficial (YouTube/Vimeo permitido)
-  - salva no navegador (localStorage)
-  - assiste dentro do modal
+Um **catálogo leve e rápido** para pesquisar **Filmes / Séries / Animes**, ver detalhes (trailer, relacionados) e ter um botão **“Assistir”** com **opções configuráveis** (por tipo) via `config.js`.
 
-IMPORTANTE:
-- Eu não integro nem automatizo sites de terceiros não autorizados.
-- O botão "Assistir" foi feito para você configurar opções legais/oficiais (ou sua biblioteca pessoal).
+> **Este projeto não hospeda conteúdo protegido.**  
+> O objetivo é **encontrar informações e direcionar para meios oficiais** (ou para sua biblioteca pessoal).
 
-CONFIG:
-1) Abra config.js
-2) Cole sua TMDB_API_KEY v3
-3) Edite WATCH_OPTIONS (movie/tv/anime)
-4) Se o domínio não estiver em WATCH_ALLOWED_DOMAINS, ele não aparece
+---
 
-RODAR (Windows):
-- VS Code + Live Server, ou:
-  python -m http.server 5500
-  abrir http://localhost:5500
+## ✅ Recursos
+
+- **Filmes / Séries / Animes**
+  - Filmes/Séries via **TMDb**
+  - Animes via **AniList**
+- **Busca rápida**
+- **Página de detalhes**
+  - Trailer (quando disponível)
+  - Títulos relacionados
+- **Onde assistir**
+  - Link **oficial do TMDb** quando existir
+- **✅ Botão “Assistir” com opções configuráveis**
+  - Abre uma lista de opções por tipo: `movie / tv / anime`
+  - Configuração feita em `config.js` (`WATCH_OPTIONS`)
+  - **Bloqueio por domínios permitidos** (`WATCH_ALLOWED_DOMAINS`)
+- **✅ Minha Biblioteca (player interno)**
+  - Você cola links:
+    - **MP4**
+    - **HLS** (`.m3u8`)
+    - **Embeds oficiais permitidos** (ex.: YouTube/Vimeo)
+  - Salva no navegador (**localStorage**)
+  - Assiste dentro do modal
+
+---
+
+## ⚠️ Importante
+
+- Eu **não integro** e **não automatizo** sites de terceiros **não autorizados**.
+- O botão **“Assistir”** foi feito para você configurar **opções legais/oficiais**  
+  **ou** usar a sua **biblioteca pessoal** com links próprios.
+
+---
+
+## ⚙️ Configuração
+
+### 1) Abra o arquivo `config.js`
+Você vai configurar:
+
+- `TMDB_API_KEY` (v3)
+- `WATCH_OPTIONS` (opções de assistir por tipo)
+- `WATCH_ALLOWED_DOMAINS` (domínios permitidos)
+
+### 2) Coloque sua TMDb API Key (v3)
+No `config.js`, cole sua chave:
+```js
+TMDB_API_KEY: "SUA_CHAVE_AQUI"
