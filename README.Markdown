@@ -47,3 +47,29 @@ A ideia aqui é: **catálogo + atalhos** pra você encontrar **onde assistir** (
 No `config.js`, cole sua chave aqui:
 ```js
 TMDB_API_KEY: "SUA_CHAVE_AQUI"
+
+3) Configure o botão “Assistir” (WATCH_OPTIONS)
+
+Você define as opções por tipo:
+
+movie → filmes
+
+tv → séries
+
+anime → animes
+
+Exemplo:
+```js
+WATCH_OPTIONS = {
+  movie: [
+    { label: "Netflix", url: "https://www.netflix.com/search?q={query}" },
+    { label: "Prime Video", url: "https://www.primevideo.com/search/ref=atv_nb_sr?phrase={query}" }
+  ],
+  tv: [
+    { label: "Max", url: "https://play.max.com/search?q={query}" }
+  ],
+  anime: [
+    { label: "Crunchyroll", url: "https://www.crunchyroll.com/search?q={query}" }
+  ]
+}
+```
