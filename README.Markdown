@@ -111,28 +111,4 @@ Depois abra no navegador:
 
 ---
 
-## 🌐 GitHub Pages
-
-Se você ativar o GitHub Pages, o site fica assim:
-- `https://SEUUSUARIO.github.io/NOME-DO-REPO/`
-
-Exemplo:
-- `https://srigamertv.github.io/movies/`
-
----
-
-## 🧠 Observações
-
-- A **Minha Biblioteca** usa `localStorage`, então os links ficam salvos **no seu navegador**.
-- Se você limpar dados do navegador, a biblioteca pode ser apagada.
-
----
-
-## 📄 Licença
-
-Escolha uma licença (ex.: MIT).  
-Se quiser, eu já deixo um `LICENSE` pronto também.
-
----
-
 Feito por **SR.IGAMER TV**
