@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SRIGAMER MOVIES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#" id="brand">
+        <div class="logo">SR</div>
+        <div class="brandText">
+          <div class="name" id="siteName">SRIGAMER MOVIES</div>
+          <div class="sub">Catálogo • trailer • assistir (opções)</div>
+        </div>
+      </a>
+
+      <div class="searchBox">
+        <span class="icon">⌕</span>
+        <input id="searchInput" type="text" placeholder="Buscar filme, série ou anime…" autocomplete="off" />
+        <button id="searchBtn" class="btn primary">Buscar</button>
+      </div>
+    </div>
+
+    <nav class="tabs wrap">
+      <button class="tab active" data-tab="movie">Filmes</button>
+      <button class="tab" data-tab="tv">Séries</button>
+      <button class="tab" data-tab="anime">Animes</button>
+      <button class="tab" data-tab="library">Minha Biblioteca</button>
+    </nav>
+  </header>
+
+  <main class="wrap main">
+    <section class="hero">
+      <div class="heroCard">
+        <div class="hTitle">Seu catálogo, do jeito certo</div>
+        <div class="hSub">
+          Pesquise e descubra títulos. No detalhe, use “Assistir” pra abrir suas opções configuradas (legais/oficiais) — ou salve um link na sua biblioteca.
+        </div>
+        <div class="chips">
+          <span class="chip">Busca</span>
+          <span class="chip">Detalhes</span>
+          <span class="chip">Trailer</span>
+          <span class="chip">Assistir (opções)</span>
+          <span class="chip">Minha Biblioteca (player)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sectionHead">
+        <h2 id="sectionTitle">Em alta (Filmes)</h2>
+        <div class="rightHead">
+          <button id="addBtn" class="btn primary hidden">Adicionar</button>
+          <div class="hint" id="sectionHint">Atualizando…</div>
+        </div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+
+      <div id="empty" class="empty hidden">
+        <div class="emptyTitle">Nada por aqui</div>
+        <div class="emptySub">Tenta pesquisar outro nome.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="backdrop" id="modalClose"></div>
+    <div class="panel">
+      <header class="panelTop">
+        <div class="panelTitle" id="modalTitle">—</div>
+        <div class="panelActions">
+          <button class="btn primary" id="watchBtn" title="Abrir opções de assistir">Assistir</button>
+          <button class="btn primary" id="quickAddBtn" title="Salvar um link pra assistir (biblioteca)">Salvar link</button>
+          <button class="btn danger hidden" id="deleteBtn">Apagar da biblioteca</button>
+          <button class="btn ghost" id="modalX">Fechar</button>
+        </div>
+      </header>
+
+      <div class="panelBody">
+        <div class="posterWrap">
+          <img id="modalPoster" alt="Poster" />
+        </div>
+
+        <div class="info">
+          <div class="metaRow" id="modalMeta"></div>
+          <div class="desc" id="modalOverview"></div>
+          <div class="tags" id="modalGenres"></div>
+
+          <div class="block">
+            <div class="blockTitle">Assistir / Onde assistir</div>
+            <div id="watchBox" class="watchBox">
+              <div class="watchHint">Carregando…</div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="blockTitle">Trailer / Player</div>
+            <div id="trailerBox" class="trailerBox">Sem trailer.</div>
+          </div>
+
+          <div class="block">
+            <div class="blockTitle">Relacionados</div>
+            <div id="relatedGrid" class="grid gridSmall"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="addModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="backdrop" id="addClose"></div>
+    <div class="panel panelSmall">
+      <header class="panelTop">
+        <div class="panelTitle">Salvar link na Minha Biblioteca</div>
+        <button class="btn ghost" id="addX">Fechar</button>
+      </header>
+
+      <div class="form">
+        <label>
+          <span>Título</span>
+          <input id="fTitle" placeholder="Ex.: Meu Filme" />
+        </label>
+        <label>
+          <span>Ano</span>
+          <input id="fYear" placeholder="2026" />
+        </label>
+        <label>
+          <span>Poster (URL opcional)</span>
+          <input id="fPoster" placeholder="https://..." />
+        </label>
+        <label>
+          <span>Tipo</span>
+          <select id="fType">
+            <option value="mp4">MP4 (video direto)</option>
+            <option value="hls">HLS (.m3u8)</option>
+            <option value="embed">Embed (YouTube/Vimeo - permitido)</option>
+          </select>
+        </label>
+        <label>
+          <span>URL do vídeo / embed</span>
+          <input id="fUrl" placeholder="http://localhost:5500/media/meu.mp4" />
+        </label>
+
+        <div class="formHint">Use somente links autorizados (seus vídeos, serviços oficiais, etc).</div>
+
+        <div class="formActions">
+          <button class="btn ghost" id="exportBtn">Exportar</button>
+          <button class="btn ghost" id="importBtn">Importar</button>
+          <button class="btn primary" id="saveBtn">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
